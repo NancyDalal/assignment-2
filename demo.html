@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>International Telephone Input</title>
+  <link rel="stylesheet" href="build/css/intlTelInput.css">
+  <link rel="stylesheet" href="build/css/demo.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="//wenzhixin.net.cn/css/fork.css" />
+  <link rel="stylesheet" href="assets/bootstrap-v3/css/bootstrap.css" />
+  <script src="assets/jquery.min.js"></script>
+  <script src="assets/bootstrap-v3/js/bootstrap.js"></script>
+  <script src="bootstrap-show-password.js"></script>
+  <script>
+    $(function() {
+      $('#password').password()
+      .password('focus')
+      .on('show.bs.password', function(e) {
+        $('#eventLog').text('On show event');
+        $('#methods').prop('checked', true);
+      }).on('hide.bs.password', function(e) {
+        $('#eventLog').text('On hide event');
+        $('#methods').prop('checked', false);
+      });
+      $('#methods').click(function() {
+        $('#password').password('toggle');
+      });
+    });
+  </script>
+
+
+   <style>
+    .main {
+      margin: 80px;
+      display: flex;
+    
+    }
+
+    .panel-body {
+      height: 120px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .pwd-style{
+      margin-left: 10rem;
+      float: left;
+    }
+
+  
+
+  </style>
+
+
+
+</head>
+
+<body>
+ 
+
+<div class="container" style="border: 2px;">
+  <form>
+
+   <center> <h3>Bootstrap Plugin</h3></center>
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+ 
+    <div class="form-group row">
+    <label for="inputbirthdate" class="col-sm-2 col-form-label">Birthdate</label>
+    <div class="col-sm-10">
+      <input type="date" name="date" id="datepicker">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputpassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input
+        id="password"
+        class="form-control"
+        type="password"
+        value="123"
+        placeholder="password">
+    </div>
+  </div>
+
+ <center> <h3>Jquery Plugin</h3></center>
+   <div class="form-group row">
+     <label for="inputphone" class="col-sm-2 col-form-label">Phone</label>
+      <div class="col-sm-10">
+   <input id="phone" name="phone" type="tel">
+  </div>
+</div>
+
+
+    <!--Password
+    <a href="https://github.com/wenzhixin/bootstrap-show-password" class="fork_me"></a>
+       
+          <div class="panel-body">
+            <iframe src="v3.html"></iframe> 
+        </div>
+      </div>
+    </div>
+
+  <script src="//wenzhixin.net.cn/js/analytics.js"></script>
+    </div>
+  </div>
+  <div style="margin-left:10px align-content:center; float: left;">
+    <p>
+      <b>Password</b>
+      <div class="pwd-style">
+        <input
+        id="password"
+        class="form-control"
+        type="password"
+        value="123"
+        placeholder="password">
+      </div>
+      
+    </p>
+  </div>-->
+
+
+
+</div>
+   
+   <center> <button type="submit">Submit</button></center>
+  </form>
+
+  <script src="build/js/intlTelInput.js"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      // allowDropdown: false,
+      // autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: document.body,
+      // excludeCountries: ["us"],
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      //     var countryCode = (resp && resp.country) ? resp.country : "";
+      //     callback(countryCode);
+      //   });
+      // },
+      // hiddenInput: "full_number",
+      // initialCountry: "auto",
+      // localizedCountries: { 'de': 'Deutschland' },
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      utilsScript: "build/js/utils.js",
+    });
+  </script><br><br>
+
+
+<p><b> 1) Bootstrap plugin</b></p><br>
+<p><b>In bootstrap plugin i have used a bootstrap login form and along with that i have used a bootstrap show password plugin in that plugin we can able to see our password by one simple click.</b></p><br>
+
+<p><b>2) Jquery plugin</b></p><br>
+<p><b>for jquery plugin i have used Intl-tel-input-master plugin which is used for showing the different countries telephone code while entering phone number in the form.</b></p>
+</body>
+
+</html>
